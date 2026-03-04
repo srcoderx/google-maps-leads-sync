@@ -9,6 +9,10 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 
 // Phantombuster webhook endpoint
+app.get("/", (req, res) => {
+	res.json({ success: true, message: "Server is running" });
+});
+
 app.post("/", async (req, res) => {
 	res.json({ success: true });
 	try {
